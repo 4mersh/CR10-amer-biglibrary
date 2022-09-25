@@ -5,7 +5,7 @@
     if($_POST){
         $id = $_POST["id"];
 
-        $sql = "DELETE FROM products where id = {$id}";
+        $sql = "DELETE FROM blibrary where id = {$id}";
         $result = mysqli_query($conn, $sql);
 
         if($result ){

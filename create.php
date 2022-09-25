@@ -8,8 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-    <form action="actions/a_crete.php" method="POST" enctype="multipart/form-data">
+  <div class="container">
+    <form action="actions/a_create.php" method="POST" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="title" class="form-label">title</label>
     <input type="text" class="form-control" id="title" aria-describedby="emailHelp" name="title" placeholder="type Book Name">
@@ -20,7 +20,7 @@
     <label for="pname" class="form-label">pname</label>
     <input type="text" class="form-control" id="pname" aria-describedby="emailHelp" name="pname" placeholder="type the publisher Name">
    
-  </div>
+    </div>
 
   <div class="mb-3">
     <label for="paddress" class="form-label">paddress</label>
@@ -88,8 +88,8 @@
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>
-</form>
-    </div>
+  </form> 
+</div>
 
 </body>
 </html>
