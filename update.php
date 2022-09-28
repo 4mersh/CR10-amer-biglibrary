@@ -44,9 +44,13 @@ if(isset($_GET["id"])){
   </div>
 
   <div class="mb-3">
-    <label for="p_size" class="form-label">p_size</label>
-    <input size="number" class="form-control" id="p_size" aria-describedby="emailHelp" name="p_size" value ="<?php echo $row["p_size"]; ?>">
-   
+    <p>p_size</p>
+    <select name="p_size" id="p_size">
+    <option value="small">small</option>
+    <option value="budium">budium</option>
+    <option value="big">big</option>
+  </select>
+
   </div>
 
   <div class="mb-3">
@@ -81,15 +85,22 @@ if(isset($_GET["id"])){
 
 
   <div class="mb-3">
-    <label for="type" class="form-label">type</label>
-    <input size="text" class="form-control" id="type" aria-describedby="emailHelp" name="type" value ="<?php echo $row["type"]; ?>">
-   
+  <p>Type</p>
+    <select name="type" id="type">
+    <option value="Book">Book</option>
+    <option value="CD">CD</option>
+    <option value="DVD">DVD</option>
+  </select>
+
   </div>
 
 
   <div class="mb-3">
-    <label for="status" class="form-label">status</label>
-    <input size="text" class="form-control" id="status" aria-describedby="emailHelp" name="status" value ="<?php echo $row["status"]; ?>">
+  <p>Status</p>
+    <select name="status" id="status">
+    <option value="available">available</option>
+    <option value="reserved">reserved</option>
+  </select>
    
   </div>
 

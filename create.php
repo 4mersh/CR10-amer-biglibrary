@@ -29,8 +29,12 @@
   </div>
 
   <div class="mb-3">
-    <label for="p_size" class="form-label">p_size</label>
-    <input size="number" class="form-control" id="p_size" aria-describedby="emailHelp" name="p_size">
+  <p>p_size</p>
+    <select name="p_size" id="p_size">
+    <option value="small">small</option>
+    <option value="budium">budium</option>
+    <option value="big">big</option>
+  </select>
    
   </div>
 
@@ -66,16 +70,22 @@
 
 
   <div class="mb-3">
-    <label for="type" class="form-label">type</label>
-    <input size="text" class="form-control" id="type" aria-describedby="emailHelp" name="type">
+  <p>Type</p>
+    <select name="type" id="type">
+    <option value="Book">Book</option>
+    <option value="CD">CD</option>
+    <option value="DVD">DVD</option>
+  </select>
    
   </div>
 
 
   <div class="mb-3">
-    <label for="status" class="form-label">status</label>
-    <input size="text" class="form-control" id="status" aria-describedby="emailHelp" name="status">
-   
+    <p>Status</p>
+    <select name="status" id="status">
+    <option value="available">available</option>
+    <option value="reserved">reserved</option>
+  </select>
   </div>
 
   <div class="mb-3">
@@ -86,6 +96,7 @@
     <label for="image" class="form-label">image</label>
     <input type="file" class="form-control" id="image" name="image">
   </div>
+  
   
   <button type="submit" class="btn btn-primary">Create</button>
   </form> 
