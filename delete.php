@@ -20,7 +20,7 @@
     <?php require_once "./components/bootstrap.php"; ?>
 </head>
 <body>
-    <h1 class="text-center">Are you sure you want to delete tith Book (<?= $data["title"] ?>) <img style="border-radius: 50%; width: 150px" src="image/<?= $data["image"] ?>"></h1>
+    <h1 class="text-center">Are you sure you want to delete this Book (<?= $data["title"] ?>) <img style="border-radius: 50%; width: 150px" src="image/<?= $data["image"] ?>"></h1>
 
     <div class="text-center">
         <a href="index.php" class="btn btn-danger">No</a> 
