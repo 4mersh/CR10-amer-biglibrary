@@ -1,44 +1,50 @@
 <?php 
-    require_once "actions/db_connect.php";
 
-    $sql = "SELECT * FROM blibrary";
+require_once "actions/db_connect.php";
+
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+
+    $sql = "SELECT * FROM blibrary WHERE id = {$id}";
     $result = mysqli_query($conn, $sql);
-
     $body = "";
+    $row = mysqli_fetch_assoc($result);
+    
 
-    if(mysqli_num_rows($result) == 0){
-        $body = "<div class='text-center h1 text-danger'>No Result</div>";
-    }else {
-        while($row = mysqli_fetch_assoc($result)){
-            $body.= "
-            <div class='container'>
-            <div class='card' style='width: 18rem;'>
-  <a href='info.php?id={$row["id"]}' class='btn btn-dark'>  <img src='image/{$row["image"]}' class='card-img-top' alt='{$row["title"]}'>
-  </a>
-  <a href='info.php?id={$row["id"]}' class='btn btn-dark'>info</a>
-  <div class='card-body'>
-    <h5 class='card-title'>{$row["title"]}</h5>
-    <p class='card-text'>{$row["type"]}</p>
-    <p class='card-text'>{$row["publish_date"]}</p>
-    <p class='card-text'>{$row["status"]}</p>
-    <p class='card-text'>{$row["price"]} €</p>
-    <a href='#' class='btn btn-success'>Buy</a>
-    <a href='update.php?id={$row["id"]}' class='btn btn-primary'>Update</a>
-    <a href='delete.php?id={$row["id"]}' class='btn btn-danger'>Delete</a>
-  </div>
-  </div>
-</div>
-            ";
-        }
-    }
+    $body.= "
+    <div class='container'>
+        <div class='card' style='width: 18rem;'>
+            <a href='index.php?id={$row["id"]}' class='btn btn-dark'><img src='image/{$row["image"]}' class='card-img-top' alt='{$row["title"]}'>
+            </a>
+            <div class='card-body'>
+                <h5 class='card-title'>{$row["title"]}</h5>
+                <p class='card-text'>{$row["short_description"]}</p>
+                <p class='card-text'>{$row["pname"]}</p>
+                <p class='card-text'>{$row["paddress"]}</p>
+                <p class='card-text'>{$row["p_size"]}</p>
+                <p class='card-text'>{$row["author_fname"]}</p>
+                <p class='card-text'>{$row["author_lname"]}</p>
+                <p class='card-text'>{$row["ISBNcode"]}</p>
+                <p class='card-text'>{$row["type"]}</p>
+                <p class='card-text'>{$row["publish_date"]}</p>
+                <p class='card-text'>{$row["status"]}</p>
+                <p class='card-text'>{$row["price"]} €</p>
+                <a href='update.php?id={$row["id"]}' class='btn btn-primary'>Update</a>
+                <a href='delete.php?id={$row["id"]}' class='btn btn-danger'>Delete</a>
+            </div>
+        </div>
+    </div>
+        ";
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once "components/Bootstrap.php";?>
+    <?php require_once "components/Bootstrap.php";?> 
     <title>Document</title>
 </head>
 <body>
@@ -65,13 +71,20 @@
   </div>
 </nav>
 <div class="p-3 mb-2 bg-white text-dark"></div>
-    <div class="container">
-        <div class="row row-cols-3">
+
+<div class="row row-cols-3">
            <?= $body;?> 
         </div>
     </div>
-   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
 
 </body>
 </html>
+
+<?php
+
+}
+
+?>
