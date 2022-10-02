@@ -12,6 +12,7 @@
     $body = "";
     while($row = mysqli_fetch_assoc($result)){
         $body.= "
+        <div class='container'
         <div class='card-body'>
           <img src='image/{$row["image"]}' class='card-img-top' alt='{$row["title"]}'>
           <p class='card-text'>{$row["pname"]} </p> 
@@ -30,7 +31,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php require_once "components/Bootstrap.php";?>
-        <title>Document</title>
+        <title>CR10-AmerSh-Biglibrary</title>
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -54,11 +55,13 @@
 <div class="p-3 mb-2 bg-white text-dark"></div>
 
     <div class="container ">
-        <div class="row row-cols-3 ">
+        <div class="row row-cols-2 ">
             <?= $body; ?>
         </div>
     </div>
-
+    <style>
+        .container{background-image: url(https://cdn.pixabay.com/photo/2022/01/16/20/38/coffee-6943139_960_720.jpg) ;}
+    </style>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
     </html>
